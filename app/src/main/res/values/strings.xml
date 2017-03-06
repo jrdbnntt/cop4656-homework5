@@ -1,3 +1,55 @@
 <resources>
-    <string name="app_name">Homework 5</string>
+    <string name="app_name">COP4656 Homework 5</string>
+    <string name="title_activity_main">COP4656 Homework 5 Form</string>
+
+    <string-array name="employeeIds">
+        <item>TEST</item>
+        <item>7892384</item>
+        <item>5213849</item>
+        <item>7848937</item>
+        <item>2343023</item>
+    </string-array>
+
+    <!-- Form Fields -->
+    <string name="employeeId">Employee ID</string>
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="accessCode">Access Code</string>
+    <string name="confirmAccessCode">Confirm Code</string>
+    <string name="department">Department</string>
+    <string name="adAccess">A/D Access</string>
+    <string name="allowedAccess">Allowed Access?</string>
+
+    <!-- FSU College of Arts & Sciences Departments -->
+    <string-array name="departments">
+        <item>Aerospace Studies (Air Force ROTC)</item>
+        <item>Anthropology</item>
+        <item>Biological Science</item>
+        <item>Chemistry &amp; Biochemistry</item>
+        <item>Classics</item>
+        <item>Computer Science</item>
+        <item>Earth, Ocean &amp; Atmospheric Science</item>
+        <item>English</item>
+        <item>History</item>
+        <item>Mathematics</item>
+        <item>Military Science (Army ROTC)</item>
+        <item>Modern Languages &amp; Linguistics</item>
+        <item>Philosophy</item>
+        <item>Physics</item>
+        <item>Psychology</item>
+        <item>Religion</item>
+        <item>Scientific Computing</item>
+        <item>Statistics</item>
+    </string-array>
+
+    <!-- Form Buttons-->
+    <string name="reset">RESET</string>
+    <string name="submit">SUBMIT</string>
+    <string name="layout_liner">TO LINEAR VIEW</string>
+    <string name="layout_relative">TO RELATIVE VIEW</string>
+    <string name="layout_table">TO TABLE VIEW</string>
+
 </resources>
