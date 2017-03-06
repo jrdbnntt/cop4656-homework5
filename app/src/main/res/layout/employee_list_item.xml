@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="@dimen/main_layout_padding">
+
+    <!-- Employee ID-->
+    <TextView
+        android:layout_alignParentTop="true"
+        android:text="@string/employeeId"
+        android:layout_height="@dimen/form_field_height"
+        android:id="@+id/tvEmployeeId"
+        android:clickable="false"
+        android:layout_width="@dimen/form_label_width"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorLabelNormal"/>
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvEmployeeId"
+        android:layout_alignTop="@id/tvEmployeeId"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvEmployeeIdValue"
+        android:gravity="center_vertical" />
+
+    <!-- Name -->
+    <TextView
+        android:layout_below="@id/tvEmployeeId"
+        android:text="@string/name"
+        android:layout_height="@dimen/form_field_height"
+        android:id="@+id/tvName"
+        android:layout_width="@dimen/form_label_width"
+        android:textColor="@color/colorLabelNormal"
+        android:gravity="center_vertical" />
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvName"
+        android:layout_alignTop="@id/tvName"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvNameValue"
+        android:gravity="center_vertical"/>
+
+
+    <!-- Gender -->
+    <TextView
+        android:layout_below="@id/tvName"
+        android:text="@string/gender"
+        android:layout_height="@dimen/form_field_height"
+        android:id="@+id/tvGender"
+        android:layout_width="@dimen/form_label_width"
+        android:textColor="@color/colorLabelNormal"
+        android:gravity="center_vertical" />
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvGender"
+        android:layout_alignTop="@id/tvGender"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvGenderValue"
+        android:gravity="center_vertical"/>
+
+
+    <!-- Email Address-->
+    <TextView
+        android:layout_below="@id/tvGender"
+        android:text="@string/emailAddress"
+        android:layout_height="@dimen/form_field_height"
+        android:id="@+id/tvEmailAddress"
+        android:textColor="@color/colorLabelNormal"
+        android:layout_width="@dimen/form_label_width"
+        android:gravity="center_vertical" />
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvEmailAddress"
+        android:layout_alignTop="@id/tvEmailAddress"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvEmailAddressValue"
+        android:gravity="center_vertical"/>
+
+    <!-- Access Code -->
+    <TextView
+        android:layout_below="@id/tvEmailAddress"
+        android:text="@string/accessCode"
+        android:layout_height="@dimen/form_field_height"
+        android:textColor="@color/colorLabelNormal"
+        android:id="@+id/tvAccessCode"
+        android:layout_width="@dimen/form_label_width"
+        android:gravity="center_vertical" />
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvAccessCode"
+        android:layout_alignTop="@id/tvAccessCode"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvAccessCodeValue"
+        android:gravity="center_vertical"/>
+
+    <!-- Department -->
+    <TextView
+        android:layout_below="@id/tvAccessCode"
+        android:text="@string/department"
+        android:layout_height="@dimen/form_field_height"
+        android:textColor="@color/colorLabelNormal"
+        android:id="@+id/tvDepartment"
+        android:layout_width="@dimen/form_label_width"
+        android:gravity="center_vertical" />
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvDepartment"
+        android:layout_alignTop="@id/tvDepartment"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvDepartmentValue"
+        android:gravity="center_vertical"/>
+
+
+    <!-- A/D Access -->
+    <TextView
+        android:text="@string/adAccess"
+        android:layout_height="@dimen/form_field_height"
+        android:textColor="@color/colorLabelNormal"
+        android:id="@+id/tvAdAccess"
+        android:layout_width="@dimen/form_label_width"
+        android:gravity="center_vertical"
+        android:layout_below="@id/tvDepartment"/>
+    <TextView
+        android:layout_height="@dimen/form_field_height"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/tvAdAccess"
+        android:layout_alignTop="@id/tvAdAccess"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvAdAccessValue"
+        android:gravity="center_vertical"/>
+
+</RelativeLayout>
+
+
