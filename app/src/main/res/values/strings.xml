@@ -53,4 +53,8 @@
     <string name="layout_relative">TO RELATIVE VIEW</string>
     <string name="layout_table">TO TABLE VIEW</string>
 
+
+    <!-- Permissions -->
+    <string name="permission_provider_access">com.jrdbnntt.cop4656.homework5.provider.permission.ACCESS_PERMISSION</string>
+
 </resources>

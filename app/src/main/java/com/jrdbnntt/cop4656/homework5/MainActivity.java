@@ -1,5 +1,7 @@
 package com.jrdbnntt.cop4656.homework5;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -7,6 +9,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -27,6 +30,7 @@ import com.jrdbnntt.cop4656.homework5.forms.TextField;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Layout Management
     private static final int[] layouts = {
             R.layout.linear,
             R.layout.relative,
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private static int currentLayout = 0;
 
+    // Field Management
     private Form form;
     private TextField employeeIdField, nameField, accessCodeField;
     private RadioField genderField;
@@ -186,15 +191,22 @@ public class MainActivity extends AppCompatActivity {
 
                 if (message == null) {
                     String employeeId = employeeIdField.getValue().toString();
+
+                    ContentValues values = getContentValues();
                     if (isExistingEmployee(employeeId)) {
                         // Update employee
-                        // TODO
-
+                        String selectionClause = HwContentProvider.Employee.ID + " = ?";
+                        String[] selectionArgs = new String[] { employeeId };
+                        getContentResolver().update(
+                                HwContentProvider.CONTENT_URI,
+                                values,
+                                selectionClause,
+                                selectionArgs
+                        );
                         message = "Existing employee information updated.";
                     } else {
                         // Insert new employee
-                        // TODO
-
+                        getContentResolver().insert(HwContentProvider.CONTENT_URI, values);
                         message = "New employee registered.";
                     }
                 }
@@ -211,11 +223,35 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Checks database to see if an employee exists with the given id
-     * TODO raise db exception
      */
     boolean isExistingEmployee(String employeeId) {
-        // TODO
-        return false;
+        boolean exists;
+
+        String selectionClause = HwContentProvider.Employee.ID + " = ?";
+        String[] selectionArgs = new String[] { employeeId };
+        Cursor cursor = getContentResolver().query(
+                HwContentProvider.CONTENT_URI, null, selectionClause, selectionArgs, null
+        );
+        exists = cursor.getCount() != 0;
+        cursor.close();
+
+        return exists;
+    }
+
+    /**
+     * Constructs a ContentValues object representation of the form fields' values
+     */
+    private ContentValues getContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(HwContentProvider.Employee.ID, employeeIdField.getValue().toString());
+        values.put(HwContentProvider.Employee.NAME, nameField.getValue().toString());
+        values.put(HwContentProvider.Employee.GENDER, genderField.getValue().getText().toString());
+        values.put(HwContentProvider.Employee.EMAIL_ADDRESS, emailField.getValue().toString());
+        values.put(HwContentProvider.Employee.ACCESS_CODE,
+                Integer.parseInt(accessCodeField.getValue().toString()));
+        values.put(HwContentProvider.Employee.DEPARTMENT, departmentField.getValue());
+        values.put(HwContentProvider.Employee.AD_ACCESS, adAccessField.getValue()? 1 : 0);
+        return values;
     }
 
 
