@@ -207,23 +207,40 @@
 
         <Button
             android:text="@string/layout_relative"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:id="@+id/bChangeView"/>
 
         <Button
             android:text="@string/reset"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:id="@+id/bReset"
-            android:layout_marginStart="@dimen/main_layout_padding"
-            android:layout_marginEnd="@dimen/main_layout_padding" />
+            android:id="@+id/bReset"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center">
 
         <Button
             android:text="@string/submit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:id="@+id/bSubmit" />
 
+        <Button
+            android:text="@string/addRegister"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/bAddRegister"/>
+
     </LinearLayout>
+
 </LinearLayout>

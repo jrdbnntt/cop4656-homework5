@@ -32,12 +32,12 @@ public class SelectField extends Field<String> {
     }
 
     @Override
-    boolean isBlank() {
+    public boolean isBlank() {
         return spinner.getSelectedItem().toString().equals(emptyValue);
     }
 
     @Override
-    String getValue() {
+    public String getValue() {
         return spinner.getSelectedItem().toString();
     }
 

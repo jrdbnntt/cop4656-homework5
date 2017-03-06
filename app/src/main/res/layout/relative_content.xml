@@ -179,27 +179,47 @@
 
 
     <!-- Action Buttons -->
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/spaceCenter" />
+
     <Button
         android:text="@string/layout_table"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bChangeView"
-        android:layout_alignTop="@id/bReset"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/spaceCenter"
+        android:layout_below="@id/tvAdAccess"/>
     <Button
         android:text="@string/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bReset"
-        android:layout_marginStart="@dimen/main_layout_padding"
-        android:layout_marginEnd="@dimen/main_layout_padding"
         android:layout_toEndOf="@id/bChangeView"
-        android:layout_below="@id/tvAdAccess"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/bChangeView"/>
+
     <Button
         android:text="@string/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bSubmit"
-        android:layout_toEndOf="@id/bReset"
-        android:layout_alignTop="@id/bReset"/>
+        android:layout_below="@id/bChangeView"
+        android:layout_alignEnd="@id/spaceCenter"
+        android:layout_alignParentStart="true"/>
+    <Button
+        android:text="@string/addRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bAddRegister"
+        android:layout_toEndOf="@id/bSubmit"
+        android:layout_alignTop="@id/bSubmit"
+        android:layout_alignParentEnd="true"/>
+
+
+
 
 </RelativeLayout>

@@ -114,12 +114,27 @@ public class MainActivity extends AppCompatActivity {
      * Setup button click listeners
      */
     void initButtons() {
+        // Form reset button
         Button resetButton = (Button) findViewById(R.id.bReset);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Reset the form
                 form.clear();
+            }
+        });
+
+        // View changer button
+        Button changeViewButton = (Button) findViewById(R.id.bChangeView);
+        changeViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Switch to next view
+                currentLayout += 1;
+                if (currentLayout >= layouts.length) {
+                    currentLayout = 0;
+                }
+                init(layouts[currentLayout]);
             }
         });
 
@@ -156,17 +171,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // View changer button
-        Button changeViewButton = (Button) findViewById(R.id.bChangeView);
-        changeViewButton.setOnClickListener(new View.OnClickListener() {
+        // Add/Register button. Validates + inserts or updates
+        Button registerButton = (Button) findViewById(R.id.bAddRegister);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Switch to next view
-                currentLayout += 1;
-                if (currentLayout >= layouts.length) {
-                    currentLayout = 0;
+                String message =  null;
+
+                try {
+                    form.validate();
+                } catch (FieldValidationException e) {
+                    message = e.getMessage();
                 }
-                init(layouts[currentLayout]);
+
+                if (message == null) {
+                    String employeeId = employeeIdField.getValue().toString();
+                    if (isExistingEmployee(employeeId)) {
+                        // Update employee
+                        // TODO
+
+                        message = "Existing employee information updated.";
+                    } else {
+                        // Insert new employee
+                        // TODO
+
+                        message = "New employee registered.";
+                    }
+                }
+
+                Toast.makeText(
+                        getApplicationContext(),
+                        message,
+                        Toast.LENGTH_LONG
+                ).show();
             }
         });
     }
@@ -174,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Checks database to see if an employee exists with the given id
+     * TODO raise db exception
      */
     boolean isExistingEmployee(String employeeId) {
         // TODO

@@ -19,12 +19,12 @@ public class TextField extends Field<Editable> {
     }
 
     @Override
-    boolean isBlank() {
+    public boolean isBlank() {
         return input.getText().length() == 0;
     }
 
     @Override
-    Editable getValue() {
+    public Editable getValue() {
         return input.getText();
     }
 

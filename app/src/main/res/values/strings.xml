@@ -48,6 +48,7 @@
     <!-- Form Buttons-->
     <string name="reset">RESET</string>
     <string name="submit">SUBMIT</string>
+    <string name="addRegister">ADD/REGISTER</string>
     <string name="layout_liner">TO LINEAR VIEW</string>
     <string name="layout_relative">TO RELATIVE VIEW</string>
     <string name="layout_table">TO TABLE VIEW</string>

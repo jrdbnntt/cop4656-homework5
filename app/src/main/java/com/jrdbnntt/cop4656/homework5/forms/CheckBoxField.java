@@ -19,12 +19,12 @@ public class CheckBoxField extends Field<Boolean> {
     }
 
     @Override
-    boolean isBlank() {
+    public boolean isBlank() {
         return this.checkBox.isChecked();
     }
 
     @Override
-    Boolean getValue() {
+    public Boolean getValue() {
         return this.checkBox.isChecked();
     }
 }

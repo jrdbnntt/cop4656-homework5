@@ -190,6 +190,7 @@
             android:id="@+id/cbAdAccess" />
     </TableRow>
 
+
     <TableRow
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
@@ -217,8 +218,13 @@
             android:text="@string/submit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/bSubmit"
-            android:layout_column="1"/>
+            android:id="@+id/bSubmit"/>
+
+        <Button
+            android:text="@string/addRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bAddRegister"/>
 
     </TableRow>
 

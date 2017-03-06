@@ -40,8 +40,8 @@ public abstract class Field<ValueType> {
 
     protected void checkField() throws FieldValidationException {}
     abstract void clearField();
-    abstract boolean isBlank();
-    abstract ValueType getValue();
+    public abstract boolean isBlank();
+    public abstract ValueType getValue();
 
     public void clear() {
         this.setError(false);

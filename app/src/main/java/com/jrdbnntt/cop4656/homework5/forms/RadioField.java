@@ -20,12 +20,12 @@ public class RadioField extends Field<RadioButton> {
     }
 
     @Override
-    boolean isBlank() {
+    public boolean isBlank() {
         return getSelected() == null;
     }
 
     @Override
-    RadioButton getValue() {
+    public RadioButton getValue() {
         return getSelected();
     }
 
