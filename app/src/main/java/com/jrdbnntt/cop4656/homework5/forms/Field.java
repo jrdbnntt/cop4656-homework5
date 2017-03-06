@@ -27,7 +27,7 @@ public abstract class Field<ValueType> {
     Field(TextView label, boolean required, FieldValidator<ValueType> extraValidator) {
         this.label = label;
         this.required = required;
-        this.extraValidators = new ArrayList<>(1);
+        this.extraValidators = new ArrayList<>();
         this.extraValidators.add(extraValidator);
 
     }
@@ -74,6 +74,15 @@ public abstract class Field<ValueType> {
         setError(false);
     }
 
+    public void validateWith(FieldValidator<ValueType> validator) throws FieldValidationException {
+        try {
+            validator.validate(getValue());
+        } catch (FieldValidationException e) {
+            setError(true);
+            throw e;
+        }
+    }
+
     protected void setError(boolean value) {
         if (value) {
             // Turn text red
@@ -90,6 +99,14 @@ public abstract class Field<ValueType> {
 
     public String getName() {
         return this.label.getText().toString();
+    }
+
+
+    public void addExtraFieldValidator(FieldValidator<ValueType> newValidator) {
+        if (extraValidators == null) {
+            extraValidators = new ArrayList<>();
+        }
+        extraValidators.add(newValidator);
     }
 
 }
