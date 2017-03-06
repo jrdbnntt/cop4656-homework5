@@ -57,4 +57,10 @@
     <!-- Permissions -->
     <string name="permission_provider_access">com.jrdbnntt.cop4656.homework5.provider.permission.ACCESS_PERMISSION</string>
 
+    <!-- Employee List -->
+    <string name="title_activity_employee_list">Employee List</string>
+    <string name="spacer">-</string>
+    <string name="view_data">View Data</string>
+    <string name="enter_data">Enter Data</string>
+
 </resources>
