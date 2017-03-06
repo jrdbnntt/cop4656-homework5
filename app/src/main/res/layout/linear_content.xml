@@ -1,0 +1,229 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jrdbnntt.cop4656.homework5.MainActivity"
+    tools:showIn="@layout/form_flipper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/main_layout_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/employeeId"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmployeeId"
+            android:clickable="false"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorLabelNormal"/>
+
+        <EditText
+            android:layout_height="match_parent"
+            android:inputType="textCapCharacters"
+            android:ems="10"
+            android:id="@+id/etEmployeeId"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/name"
+            android:layout_height="match_parent"
+            android:id="@+id/tvName"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:inputType="textCapWords"
+            android:ems="10"
+            android:id="@+id/etName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/gender"
+            android:layout_height="match_parent"
+            android:id="@+id/tvGender"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/radioGroup"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="@string/gender_male"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbMale"
+                android:layout_marginEnd="@dimen/main_layout_padding"/>
+
+            <RadioButton
+                android:text="@string/gender_female"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbFemale" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/emailAddress"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmailAddress"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etEmailAddress" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/accessCode"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAccessCode"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCode" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/confirmAccessCode"
+            android:layout_height="match_parent"
+            android:id="@+id/tvAccessCodeConfirm"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCodeConfirm"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/department"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvDepartment"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/sDepartment" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height">
+
+        <TextView
+            android:text="@string/adAccess"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAdAccess"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <CheckBox
+            android:text="@string/allowedAccess"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/cbAdAccess" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="bottom|center">
+
+        <Button
+            android:text="@string/layout_relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bChangeView"/>
+
+        <Button
+            android:text="@string/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bReset"
+            android:layout_marginStart="@dimen/main_layout_padding"
+            android:layout_marginEnd="@dimen/main_layout_padding" />
+
+        <Button
+            android:text="@string/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bSubmit" />
+
+    </LinearLayout>
+</LinearLayout>

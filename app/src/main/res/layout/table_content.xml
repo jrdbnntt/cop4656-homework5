@@ -1,0 +1,225 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jrdbnntt.cop4656.homework5.MainActivity"
+    tools:showIn="@layout/table"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    android:padding="@dimen/main_layout_padding">
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/employeeId"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmployeeId"
+            android:clickable="false"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorLabelNormal"/>
+
+        <EditText
+            android:layout_height="match_parent"
+            android:inputType="textCapCharacters"
+            android:ems="10"
+            android:id="@+id/etEmployeeId"
+            android:layout_width="match_parent" />
+
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/name"
+            android:layout_height="match_parent"
+            android:id="@+id/tvName"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:inputType="textCapWords"
+            android:ems="10"
+            android:id="@+id/etName" />
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/gender"
+            android:layout_height="match_parent"
+            android:id="@+id/tvGender"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <RadioGroup
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/radioGroup"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="@string/gender_male"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbMale"
+                android:layout_marginEnd="@dimen/main_layout_padding"/>
+
+            <RadioButton
+                android:text="@string/gender_female"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbFemale" />
+
+        </RadioGroup>
+
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/emailAddress"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmailAddress"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etEmailAddress" />
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/accessCode"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAccessCode"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCode" />
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/confirmAccessCode"
+            android:layout_height="match_parent"
+            android:id="@+id/tvAccessCodeConfirm"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCodeConfirm" />
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/department"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvDepartment"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <Spinner
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/sDepartment" />
+    </TableRow>
+
+    <TableRow
+        android:minHeight="@dimen/form_field_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/adAccess"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAdAccess"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <CheckBox
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="@string/allowedAccess"
+            android:id="@+id/cbAdAccess" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/layout_liner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bChangeView" />
+
+        <Button
+            android:text="@string/reset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bReset"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bSubmit"
+            android:layout_column="1"/>
+
+    </TableRow>
+
+</TableLayout>

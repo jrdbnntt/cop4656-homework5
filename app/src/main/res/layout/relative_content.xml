@@ -1,0 +1,248 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jrdbnntt.cop4656.homework5.MainActivity"
+    tools:showIn="@layout/relative"
+    android:id="@+id/rlContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/main_layout_padding">
+
+    <RelativeLayout
+        android:id="@+id/rlEmployeeId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:text="@string/employeeId"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmployeeId"
+            android:clickable="false"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorLabelNormal"/>
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvEmployeeId"
+            android:layout_alignParentEnd="true"
+            android:inputType="textCapCharacters"
+            android:ems="10"
+            android:id="@+id/etEmployeeId" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlEmployeeId">
+
+        <TextView
+            android:text="@string/name"
+            android:layout_height="match_parent"
+            android:id="@+id/tvName"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvName"
+            android:layout_alignParentEnd="true"
+            android:inputType="textCapWords"
+            android:ems="10"
+            android:id="@+id/etName" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlGender"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlName">
+
+        <TextView
+            android:text="@string/gender"
+            android:layout_height="match_parent"
+            android:id="@+id/tvGender"
+            android:layout_width="@dimen/form_label_width"
+            android:textColor="@color/colorLabelNormal"
+            android:gravity="center_vertical" />
+
+        <RadioGroup
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvGender"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/radioGroup"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="@string/gender_male"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbMale"
+                android:layout_marginEnd="@dimen/main_layout_padding"/>
+
+            <RadioButton
+                android:text="@string/gender_female"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rbFemale" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlGender">
+
+        <TextView
+            android:text="@string/emailAddress"
+            android:layout_height="match_parent"
+            android:id="@+id/tvEmailAddress"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvEmailAddress"
+            android:layout_alignParentEnd="true"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etEmailAddress" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAccessCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlEmailAddress">
+
+        <TextView
+            android:text="@string/accessCode"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAccessCode"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvAccessCode"
+            android:layout_alignParentEnd="true"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCode" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlConfirmAccessCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlAccessCode">
+
+        <TextView
+            android:text="@string/confirmAccessCode"
+            android:layout_height="match_parent"
+            android:id="@+id/tvAccessCodeConfirm"
+            android:textColor="@color/colorLabelNormal"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvAccessCodeConfirm"
+            android:layout_alignParentEnd="true"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/etAccessCodeConfirm" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlConfirmAccessCode">
+
+        <TextView
+            android:text="@string/department"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvDepartment"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <Spinner
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvDepartment"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/sDepartment" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAllowedAccess"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_field_height"
+        android:layout_below="@id/rlDepartment">
+
+        <TextView
+            android:text="@string/adAccess"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorLabelNormal"
+            android:id="@+id/tvAdAccess"
+            android:layout_width="@dimen/form_label_width"
+            android:gravity="center_vertical" />
+
+        <CheckBox
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@id/tvAdAccess"
+            android:layout_alignParentEnd="true"
+            android:text="@string/allowedAccess"
+            android:id="@+id/cbAdAccess" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="bottom|center"
+        android:layout_below="@id/rlAllowedAccess">
+
+        <Button
+            android:text="@string/layout_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bChangeView" />
+
+        <Button
+            android:text="@string/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bReset"
+            android:layout_marginStart="@dimen/main_layout_padding"
+            android:layout_marginEnd="@dimen/main_layout_padding"
+            android:layout_toEndOf="@id/bChangeView"/>
+
+        <Button
+            android:text="@string/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bSubmit"
+            android:layout_toEndOf="@id/bReset"/>
+
+    </RelativeLayout>
+</RelativeLayout>
