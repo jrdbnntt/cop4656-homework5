@@ -1,9 +1,10 @@
 package com.jrdbnntt.cop4656.homework5.forms;
 
+import android.text.Editable;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TextField extends Field {
+public class TextField extends Field<Editable> {
 
     EditText input;
     private String[] allowedOptions;
@@ -24,6 +25,16 @@ public class TextField extends Field {
         input.setText("");
     }
 
+    @Override
+    boolean isBlank() {
+        return input.getText().length() == 0;
+    }
+
+    @Override
+    Editable getValue() {
+        return input.getText();
+    }
+
     private boolean isInOptions(String value) {
         if (allowedOptions == null) {
             return true;
@@ -38,8 +49,9 @@ public class TextField extends Field {
     }
 
     @Override
-    boolean checkField() {
-        String value = input.getText().toString();
-        return !required || (value.length() > 0 && isInOptions(value));
+    protected void checkField() throws FieldValidationException {
+        if (!isInOptions(getValue().toString())) {
+            throw FieldValidationException.INVALID(this);
+        }
     }
 }

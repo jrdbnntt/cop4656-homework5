@@ -16,6 +16,7 @@ import com.jrdbnntt.cop4656.homework5.forms.CheckBoxField;
 import com.jrdbnntt.cop4656.homework5.forms.ConfirmTextField;
 import com.jrdbnntt.cop4656.homework5.forms.EmailTextField;
 import com.jrdbnntt.cop4656.homework5.forms.Field;
+import com.jrdbnntt.cop4656.homework5.forms.FieldValidationException;
 import com.jrdbnntt.cop4656.homework5.forms.Form;
 import com.jrdbnntt.cop4656.homework5.forms.RadioField;
 import com.jrdbnntt.cop4656.homework5.forms.SelectField;
@@ -76,9 +77,17 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String message =  "Data successfully submitted to database";
+
+                try {
+                    form.validate();
+                } catch (FieldValidationException e) {
+                    message = e.getMessage();
+                }
+
                 Toast.makeText(
                         getApplicationContext(),
-                        form.validate()? "Data successfully submitted to database" : "Invalid form submission",
+                        message,
                         Toast.LENGTH_LONG
                 ).show();
             }

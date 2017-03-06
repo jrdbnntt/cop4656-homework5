@@ -13,9 +13,14 @@ public class ConfirmTextField extends TextField {
     }
 
     @Override
-    boolean checkField() {
-        String inputText = input.getText().toString();
-        String confirmText = fieldToMatch.input.getText().toString();
-        return inputText.length() > 0 && inputText.equals(confirmText);
+    protected void checkField() throws FieldValidationException {
+        super.checkField();
+        String inputText = this.getValue().toString();
+        String confirmText = fieldToMatch.getValue().toString();
+
+        if (!inputText.equals(confirmText)) {
+            throw new FieldValidationException(
+                    this.getName() + " does not match " + fieldToMatch.getName());
+        }
     }
 }

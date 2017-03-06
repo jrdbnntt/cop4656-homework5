@@ -13,9 +13,13 @@ public class EmailTextField extends TextField {
     }
 
     @Override
-    boolean checkField() {
-        String input = this.input.getText().toString();
+    protected void checkField() throws FieldValidationException {
+        super.checkField();
+        String text = this.input.getText().toString();
         Pattern emailPattern = Patterns.EMAIL_ADDRESS;
-        return !this.required || emailPattern.matcher(input).matches();
+
+        if (!emailPattern.matcher(text).matches()) {
+            throw FieldValidationException.INVALID(this);
+        }
     }
 }

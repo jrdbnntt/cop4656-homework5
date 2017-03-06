@@ -4,7 +4,7 @@ package com.jrdbnntt.cop4656.homework5.forms;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class CheckBoxField extends Field {
+public class CheckBoxField extends Field<Boolean> {
 
     private CheckBox checkBox;
 
@@ -19,7 +19,12 @@ public class CheckBoxField extends Field {
     }
 
     @Override
-    boolean checkField() {
-        return !this.required || this.checkBox.isChecked();
+    boolean isBlank() {
+        return this.checkBox.isChecked();
+    }
+
+    @Override
+    Boolean getValue() {
+        return this.checkBox.isChecked();
     }
 }

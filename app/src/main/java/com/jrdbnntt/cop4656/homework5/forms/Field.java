@@ -5,10 +5,14 @@ import android.widget.TextView;
 
 import com.jrdbnntt.cop4656.homework5.R;
 
-public abstract class Field {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public abstract class Field<ValueType> {
 
     private TextView label;
     protected boolean required = true;
+    private ArrayList<FieldValidator<ValueType>> extraValidators;
 
     Field(TextView label) {
         this.label = label;
@@ -20,18 +24,54 @@ public abstract class Field {
         this.required = required;
     }
 
-    abstract boolean checkField();
+    Field(TextView label, boolean required, FieldValidator<ValueType> extraValidator) {
+        this.label = label;
+        this.required = required;
+        this.extraValidators = new ArrayList<>(1);
+        this.extraValidators.add(extraValidator);
+
+    }
+
+    Field(TextView label, boolean required, FieldValidator<ValueType>[] extraValidators) {
+        this.label = label;
+        this.required = required;
+        this.extraValidators = new ArrayList<>(Arrays.asList(extraValidators));
+    }
+
+    protected void checkField() throws FieldValidationException {}
     abstract void clearField();
+    abstract boolean isBlank();
+    abstract ValueType getValue();
 
     public void clear() {
         this.setError(false);
         this.clearField();
     }
 
-    public boolean validate() {
-        boolean isValid = checkField();
-        setError(!isValid);
-        return isValid;
+    public void validate() throws FieldValidationException {
+        if (isBlank()) {
+            if (required) {
+                setError(true);
+                throw FieldValidationException.REQUIRED(this);
+            }
+            return;
+        }
+
+        try {
+            checkField();
+
+            if (this.extraValidators != null) {
+                ValueType value = getValue();
+                for (FieldValidator<ValueType> validator : extraValidators) {
+                    validator.validate(value);
+                }
+            }
+
+        } catch (FieldValidationException e) {
+            setError(true);
+            throw e;
+        }
+        setError(false);
     }
 
     protected void setError(boolean value) {
@@ -46,6 +86,10 @@ public abstract class Field {
                     this.label.getContext().getResources(), R.color.colorLabelNormal, null)
             );
         }
+    }
+
+    public String getName() {
+        return this.label.getText().toString();
     }
 
 }

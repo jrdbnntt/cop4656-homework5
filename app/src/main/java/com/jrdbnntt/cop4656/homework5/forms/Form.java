@@ -1,6 +1,5 @@
 package com.jrdbnntt.cop4656.homework5.forms;
 
-
 public class Form {
 
     private Field[] fields;
@@ -9,16 +8,10 @@ public class Form {
         this.fields = fields;
     }
 
-    public boolean validate() {
-        boolean passed = true;
-
+    public void validate() throws FieldValidationException {
         for (Field field : this.fields) {
-            if (!field.validate()) {
-                passed = false;
-            }
+            field.validate();
         }
-
-        return passed;
     }
 
     public void clear() {
